@@ -24,7 +24,7 @@ Only a device passing [IsSupported\(this GraphicsDevice\)](DiGi.ComputeSharp.Cor
             The WARP software device, which ComputeSharp returns as the default on a machine without a hardware adapter, is never returned.
 
 The returned device is shared by ComputeSharp and must not be disposed by the caller: disposing it resets ComputeSharp's default device cache
-            and invalidates the device held by every other caller in the process (ZiolkowskiJakub/DiGi.ComputeSharp#2).
+            and invalidates the device held by every other caller in the process (DiGi-Organization/DiGi.ComputeSharp#2).
 
 ```csharp
 public static ComputeSharp.GraphicsDevice? GraphicsDevice();
@@ -166,7 +166,7 @@ The number of values among the six provided that are equal to the target value\.
 Determines whether the DiGi\.ComputeSharp shaders can run on the specified graphics device: the device must be hardware\-accelerated and support double precision\.
 
 Every shader in this library requires double precision, which many GPUs (for example many arm64 GPUs) lack. The WARP software device is rejected even though it reports double precision as available:
-            it loses shadows cast between buildings and needs about 16 minutes to create a shading pipeline (ZiolkowskiJakub/DiGi.Solar#10).
+            it loses shadows cast between buildings and needs about 16 minutes to create a shading pipeline (DiGi-Organization/DiGi.Solar#10).
 
 ```csharp
 public static bool IsSupported(this ComputeSharp.GraphicsDevice? graphicsDevice);
