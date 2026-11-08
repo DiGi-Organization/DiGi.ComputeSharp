@@ -1,5 +1,6 @@
 using DiGi.ComputeSharp.Core.Classes;
 using DiGi.ComputeSharp.Spatial.Interfaces;
+using System.Globalization;
 
 namespace DiGi.ComputeSharp.Spatial.Classes
 {
@@ -422,7 +423,7 @@ namespace DiGi.ComputeSharp.Spatial.Classes
         /// <returns>A formatted string containing the start and end coordinates.</returns>
         public override string ToString()
         {
-            return string.Format("S:{0};E:{1}", Start, End);
+            return string.Format(CultureInfo.CurrentCulture, "S:{0};E:{1}", Start, End);
         }
     }
 }

@@ -203,7 +203,7 @@ namespace DiGi.ComputeSharp.Spatial.Classes
                 }
                 else
                 {
-                    Bool @bool = new Bool(true);
+                    Bool @bool = new(true);
 
                     return [new Line3(@bool, Point_1, Point_2), new Line3(@bool, Point_2, Point_3), new Line3(@bool, Point_3, Point_4), new Line3(@bool, Point_4, Point_1)];
                 }
@@ -217,7 +217,7 @@ namespace DiGi.ComputeSharp.Spatial.Classes
                 }
                 else
                 {
-                    Bool @bool = new Bool(true);
+                    Bool @bool = new(true);
 
                     return [new Line3(@bool, Point_1, Point_2), new Line3(@bool, Point_2, Point_3), new Line3(@bool, Point_3, Point_4), new Line3(@bool, Point_4, Point_5), new Line3(@bool, Point_5, Point_1)];
                 }
@@ -229,7 +229,7 @@ namespace DiGi.ComputeSharp.Spatial.Classes
             }
             else
             {
-                Bool @bool = new Bool(true);
+                Bool @bool = new(true);
 
                 return [new Line3(@bool, Point_1, Point_2), new Line3(@bool, Point_2, Point_3), new Line3(@bool, Point_3, Point_4), new Line3(@bool, Point_4, Point_5), new Line3(@bool, Point_5, Point_6), new Line3(@bool, Point_6, Point_1)];
             }

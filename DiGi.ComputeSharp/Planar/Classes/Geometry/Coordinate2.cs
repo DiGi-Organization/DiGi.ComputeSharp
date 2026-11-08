@@ -1,5 +1,6 @@
 using DiGi.ComputeSharp.Planar.Interfaces;
 using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 
 namespace DiGi.ComputeSharp.Planar.Classes
 {
@@ -430,7 +431,7 @@ namespace DiGi.ComputeSharp.Planar.Classes
         /// <returns>A formatted string containing the X and Y components.</returns>
         public override string ToString()
         {
-            return string.Format("[X:{0};Y:{1}]", X, Y);
+            return string.Format(CultureInfo.CurrentCulture, "[X:{0};Y:{1}]", X, Y);
         }
 
         /// <summary>

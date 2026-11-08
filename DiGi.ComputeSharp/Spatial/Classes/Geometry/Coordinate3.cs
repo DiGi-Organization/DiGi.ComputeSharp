@@ -1,5 +1,6 @@
 using DiGi.ComputeSharp.Spatial.Interfaces;
 using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 
 namespace DiGi.ComputeSharp.Spatial.Classes
 {
@@ -493,7 +494,7 @@ namespace DiGi.ComputeSharp.Spatial.Classes
         /// <returns>A formatted string containing the X, Y, and Z components.</returns>
         public override string ToString()
         {
-            return string.Format("[X:{0};Y:{1};Z:{2}]", X, Y, Z);
+            return string.Format(CultureInfo.CurrentCulture, "[X:{0};Y:{1};Z:{2}]", X, Y, Z);
         }
 
         /// <summary>

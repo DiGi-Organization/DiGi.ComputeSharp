@@ -1,5 +1,6 @@
 using DiGi.ComputeSharp.Planar.Classes;
 using DiGi.ComputeSharp.Spatial.Interfaces;
+using System.Globalization;
 
 namespace DiGi.ComputeSharp.Spatial.Classes
 {
@@ -100,7 +101,7 @@ namespace DiGi.ComputeSharp.Spatial.Classes
                 return new Coordinate2();
             }
 
-            Coordinate3 vector = new Coordinate3(point.X - Origin.X, point.Y - Origin.Y, point.Z - Origin.Z);
+            Coordinate3 vector = new(point.X - Origin.X, point.Y - Origin.Y, point.Z - Origin.Z);
 
             return new Coordinate2(GetAxisX(tolerance).DotProduct(vector), AxisY.DotProduct(vector));
         }
@@ -179,8 +180,8 @@ namespace DiGi.ComputeSharp.Spatial.Classes
 
             Coordinate3 axisX = GetAxisX(tolerance);
 
-            Coordinate3 u = new Coordinate3(AxisY.X * vector.Y, AxisY.Y * vector.Y, AxisY.Z * vector.Y);
-            Coordinate3 v = new Coordinate3(axisX.X * vector.X, axisX.Y * vector.X, axisX.Z * vector.X);
+            Coordinate3 u = new(AxisY.X * vector.Y, AxisY.Y * vector.Y, AxisY.Z * vector.Y);
+            Coordinate3 v = new(axisX.X * vector.X, axisX.Y * vector.X, axisX.Z * vector.X);
 
             return new Coordinate3(u.X + v.X, u.Y + v.Y, u.Z + v.Z);
         }
@@ -409,7 +410,7 @@ namespace DiGi.ComputeSharp.Spatial.Classes
         /// <returns>A formatted string containing the origin, normal, and local Y-axis coordinates.</returns>
         public override string ToString()
         {
-            return string.Format("O:{0};N:{1};AY:{2}", Origin, Normal, AxisY);
+            return string.Format(CultureInfo.CurrentCulture, "O:{0};N:{1};AY:{2}", Origin, Normal, AxisY);
         }
     }
 }

@@ -149,7 +149,7 @@ namespace DiGi.ComputeSharp.Planar
                 return new Line2Intersection(line_Temp);
             }
 
-            Coordinate2 point_1 = new Coordinate2();
+            Coordinate2 point_1 = new();
             if (!line2Intersection.Point_1.IsNaN())
             {
                 point_1 = line2Intersection.Point_1;
@@ -168,7 +168,7 @@ namespace DiGi.ComputeSharp.Planar
                 return new Line2Intersection(line_Temp);
             }
 
-            Coordinate2 point_2 = new Coordinate2();
+            Coordinate2 point_2 = new();
             if (!line2Intersection.Point_1.IsNaN())
             {
                 point_2 = line2Intersection.Point_1;
@@ -187,7 +187,7 @@ namespace DiGi.ComputeSharp.Planar
                 return new Line2Intersection(line_Temp);
             }
 
-            Coordinate2 point_3 = new Coordinate2();
+            Coordinate2 point_3 = new();
             if (!line2Intersection.Point_1.IsNaN())
             {
                 point_3 = line2Intersection.Point_1;
@@ -243,7 +243,7 @@ namespace DiGi.ComputeSharp.Planar
             // Solid triangle with a single edge crossing: the line starts inside the triangle and exits
             // through that edge. Unlike the 3D case the line is already in the triangle's plane, so there
             // is no plane-parallel test or barycentric plane-piercing branch to perform here.
-            Coordinate2 start = new Coordinate2();
+            Coordinate2 start = new();
             if (triangle.Inside(line.Start, tolerance))
             {
                 start = line.Start;
@@ -258,7 +258,7 @@ namespace DiGi.ComputeSharp.Planar
                 return new Line2Intersection();
             }
 
-            Coordinate2 end = new Coordinate2();
+            Coordinate2 end = new();
             if (notNaN_1)
             {
                 end = point_1;

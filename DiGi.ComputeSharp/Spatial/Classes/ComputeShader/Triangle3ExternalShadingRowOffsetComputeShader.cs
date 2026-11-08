@@ -39,10 +39,7 @@ namespace DiGi.ComputeSharp.Spatial.Classes
         /// <param name="rowOffset">The zero-based index of the first target triangle row to process.</param>
         public Triangle3ExternalShadingRowOffsetComputeShader(ReadOnlyBuffer<Triangle3> triangles, ReadOnlyBuffer<Triangle3> externalTriangles, ReadWriteBuffer<Triangle3Intersection> triangleIntersections, Coordinate3 vector, int rowOffset)
         {
-            if (rowOffset < 0)
-            {
-                throw new ArgumentOutOfRangeException(nameof(rowOffset));
-            }
+            ArgumentOutOfRangeException.ThrowIfNegative(rowOffset);
 
             this.vector = vector;
             this.triangles = triangles;
@@ -64,10 +61,7 @@ namespace DiGi.ComputeSharp.Spatial.Classes
         /// <param name="tolerance">The tolerance value used for geometric comparison.</param>
         public Triangle3ExternalShadingRowOffsetComputeShader(ReadOnlyBuffer<Triangle3> triangles, ReadOnlyBuffer<Triangle3> externalTriangles, ReadWriteBuffer<Triangle3Intersection> triangleIntersections, Coordinate3 vector, int rowOffset, double tolerance)
         {
-            if (rowOffset < 0)
-            {
-                throw new ArgumentOutOfRangeException(nameof(rowOffset));
-            }
+            ArgumentOutOfRangeException.ThrowIfNegative(rowOffset);
 
             this.tolerance = tolerance;
             this.vector = vector;

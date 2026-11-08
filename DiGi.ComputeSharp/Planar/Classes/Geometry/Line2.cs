@@ -1,5 +1,6 @@
 using DiGi.ComputeSharp.Core.Classes;
 using DiGi.ComputeSharp.Planar.Interfaces;
+using System.Globalization;
 
 namespace DiGi.ComputeSharp.Planar.Classes
 {
@@ -248,6 +249,6 @@ namespace DiGi.ComputeSharp.Planar.Classes
         /// </summary>
         /// <returns>A formatted string containing the start and end coordinates.</returns>
         public override string ToString()
-        { return string.Format("S:{0};E:{1}", Start, End); }
+        { return string.Format(CultureInfo.CurrentCulture, "S:{0};E:{1}", Start, End); }
     }
 }

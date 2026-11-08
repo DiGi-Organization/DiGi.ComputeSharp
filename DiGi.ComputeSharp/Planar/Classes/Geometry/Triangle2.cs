@@ -1,5 +1,6 @@
 using DiGi.ComputeSharp.Core.Classes;
 using DiGi.ComputeSharp.Planar.Interfaces;
+using System.Globalization;
 
 namespace DiGi.ComputeSharp.Planar.Classes
 {
@@ -335,7 +336,7 @@ namespace DiGi.ComputeSharp.Planar.Classes
         /// <returns>A formatted string describing the triangle vertices.</returns>
         public override string ToString()
         {
-            return string.Format("P1:{0};P2:{1};P3:{2}", Point_1, Point_2, Point_3);
+            return string.Format(CultureInfo.CurrentCulture, "P1:{0};P2:{1};P3:{2}", Point_1, Point_2, Point_3);
         }
     }
 }
